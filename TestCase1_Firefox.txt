@@ -1,0 +1,22 @@
+package crossBrowserTesting;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class TestCase1_Firefox {
+
+	public static void main(String[] args) {
+		WebDriver driver = new FirefoxDriver();
+		driver.get("https://www.google.com");
+		
+		String PageTitle = driver.getTitle();
+		
+		if (PageTitle.equals("Google")){
+			System.out.println("Google Application Launched - Passed");
+		}
+		else {
+			System.out.println("Google Application Not Launched - Failed");
+		}
+		driver.close();
+	}
+}

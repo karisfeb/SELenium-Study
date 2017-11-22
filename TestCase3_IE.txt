@@ -1,0 +1,25 @@
+package crossBrowserTesting;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+public class TestCase3_IE {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.ie.driver", "D:\\Apps\\SeleniumWebDrivers\\IEx64\\IEDriverServer.exe");
+		//DesiredCapabilities cap = DesiredCapabilities.internetExplorer();
+        //cap.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+		WebDriver driver = new InternetExplorerDriver();
+		driver.get("https://www.google.com");
+		
+		String PageTitle = driver.getTitle();
+		
+		if (PageTitle.equals("Google")){
+			System.out.println("Google Application Launched - Passed");
+		}
+		else {
+			System.out.println("Google Application Not Launched - Failed");
+		}
+		driver.close();
+	}
+}
